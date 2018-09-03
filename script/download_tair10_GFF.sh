@@ -6,3 +6,6 @@ cat TAIR10_GFF3_genes.gff |grep 'chromosome'|cut -f1,5 > ../../genome/tair10/tai
 gffread TAIR10_GFF3_genes.gff -T -o tair10.gtf
 
 cat TAIR10_GFF3_genes.gff | awk '{if($3=="gene")print $1"\t"$4"\t"$5"\t"$9"\t"$7}'|sed 's/ID=//'|sed 's/;Note=/\t/'|sed -r 's/;.+\t/\t/'|sort -k1,1 -k2,2n > tair10_gene.bed
+
+astalavista -t asta -i tair10.gtf -e [ASE,ASI] --threads 30
+zcat tair10_sorted.gtf_astalavista.gtf.gz > tair10_sorted.gtf_astalavista.gtf
