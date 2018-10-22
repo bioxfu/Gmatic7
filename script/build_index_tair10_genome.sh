@@ -13,3 +13,7 @@ mkdir bwa
 bwa index -p bwa/tair10 tair10.fa 
 
 bismark_genome_preparation --genomic_composition --verbose .
+
+mkdir BRAT-bw
+$HOME/Gmatic7/script/build_bw -P $HOME/Gmatic7/genome/tair10/BRAT-bw -G 1 -r file_with_references.txt
+$HOME/Gmatic7/script/build_bw -P $HOME/Gmatic7/genome/tair10/BRAT-bw -G 2 -r file_with_references.txt
