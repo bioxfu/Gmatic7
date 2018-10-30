@@ -30,6 +30,19 @@ cd gene/tomato
 download_tomato_GFF.sh
 cd -
 
+## Nicotiana benthamiana
+mkdir genome/Niben
+mkdir gene/Niben
+
+cd genome/Niben
+download_Nicotiana_genome.sh
+build_index_Nicotiana_genome.sh
+cd -
+
+cd gene/Niben
+download_Nicotiana_GFF.sh
+download_Nicotiana_anno.sh
+
 ## GtRNAdb
 download_GtRNAdb.sh
 
