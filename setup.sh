@@ -43,6 +43,18 @@ cd gene/Niben
 download_Nicotiana_GFF.sh
 download_Nicotiana_anno.sh
 
+## mouse
+mkdir genome/mouse
+mkdir gene/mouse
+
+cd genome/mouse
+download_mouse_genome.sh
+build_index_mouse_genome.sh
+cd -
+
+cd gene/mouse
+download_mouse_GTF.sh
+
 ## GtRNAdb
 download_GtRNAdb.sh
 
