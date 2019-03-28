@@ -1,4 +1,5 @@
 samtools faidx Niben101.fa
+cut -f1,2 Niben101.fa.fai|sort > Niben101.chromSize
 
 mkdir bowtie
 bowtie-build Niben101.fa bowtie/Niben101
