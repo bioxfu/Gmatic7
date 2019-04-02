@@ -37,3 +37,6 @@ zcat homo_sapiens.88.gtf.gz > homo_sapiens.88.gtf
 
 python GTFtools_0.6.5/gtftools.py -i mus_musculus.88.intron.bed mus_musculus.88.gtf
 python GTFtools_0.6.5/gtftools.py -i homo_sapiens.88.intron.bed homo_sapiens.88.gtf
+
+grep -v '#' homo_sapiens.88.gtf|awk '{if($3=="gene")print $14"-"$10"\t"$5-$4+1}'|sed 's/[";]//g' > homo_sapiens.88.gtf.geneLen
+grep -v '#' mus_musculus.88.gtf|awk '{if($3=="gene")print $14"-"$10"\t"$5-$4+1}'|sed 's/[";]//g' > mus_musculus.88.gtf.geneLen
