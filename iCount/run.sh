@@ -40,3 +40,6 @@ python GTFtools_0.6.5/gtftools.py -i homo_sapiens.88.intron.bed homo_sapiens.88.
 
 grep -v '#' homo_sapiens.88.gtf|awk '{if($3=="gene")print $14"-"$10"\t"$5-$4+1}'|sed 's/[";]//g' > homo_sapiens.88.gtf.geneLen
 grep -v '#' mus_musculus.88.gtf|awk '{if($3=="gene")print $14"-"$10"\t"$5-$4+1}'|sed 's/[";]//g' > mus_musculus.88.gtf.geneLen
+
+grep -v '#' homo_sapiens.88.gtf|awk '{if($3=="gene")print $1"\t"$4-1"\t"$5"\t"$14"-"$10"\t.\t"$7}'|sed 's/[";]//g' > homo_sapiens.88.gtf.gene.bed
+grep -v '#' mus_musculus.88.gtf|awk '{if($3=="gene")print $1"\t"$4-1"\t"$5"\t"$14"-"$10"\t.\t"$7}'|sed 's/[";]//g' > mus_musculus.88.gtf.gene.bed
