@@ -20,3 +20,6 @@ bismark_genome_preparation --genomic_composition --verbose .
 mkdir BRAT-bw
 $HOME/Gmatic7/script/build_bw -P $HOME/Gmatic7/genome/GRCm38/BRAT-bw -G 1 -r file_with_references.txt
 $HOME/Gmatic7/script/build_bw -P $HOME/Gmatic7/genome/GRCm38/BRAT-bw -G 2 -r file_with_references.txt
+
+mkdir kallisto
+kallisto index -i kallisto/GRCm38 GRCm38.fa
