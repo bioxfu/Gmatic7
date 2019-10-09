@@ -22,4 +22,4 @@ $HOME/Gmatic7/script/build_bw -P $HOME/Gmatic7/genome/GRCh38/BRAT-bw -G 1 -r fil
 $HOME/Gmatic7/script/build_bw -P $HOME/Gmatic7/genome/GRCh38/BRAT-bw -G 2 -r file_with_references.txt
 
 mkdir kallisto
-kallisto index -i kallisto/GRCh38 GRCh38.fa
+kallisto index -i kallisto/GRCh38 GRCh38_trans.fa
