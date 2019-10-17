@@ -5,5 +5,5 @@ cat TAIR10_functional_descriptions_20140331.txt|grep '^AT[0-9]G'|cut -f1-4|sed -
 cat tmp|grep 'other_rna'|cut -f1,2|sort|uniq|awk '{print $0"\tother RNA\tother RNA"}' > tmp2
 cat tmp|grep 'transposable_element_gene'|cut -f1,2|sort|uniq|awk '{print $0"\ttransposable element gene\ttransposable element gene"}' >> tmp2
 cat tmp|grep -v 'other_rna'|grep -v 'transposable_element_gene' > tmp3
-cat tmp2 tmp3|sed 's/ $//'|sort|uniq  >> tair10_gene_anno.tsv
+cat tmp2 tmp3|sed 's/ $//'|sort|uniq|sed 's/\t\t/\t.\t/'|sed 's/\t$/\t./'|groupBy -g 1 -c 1,2,3,4 -o distinct|cut -f2-5 >> tair10_gene_anno.tsv
 rm tmp tmp2 tmp3
