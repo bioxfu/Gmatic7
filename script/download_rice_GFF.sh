@@ -4,4 +4,4 @@ gffread Osativa_Nipponbare.gff -T -o Osativa_Nipponbare.gtf
 
 mkdir txdb
 
-Rscript ../../script/makeTxdb.R Osativa_Nipponbare.gtf txdb/Osativa_Nipponbare_txdb.sqlite
+Rscript ../../script/makeTxdb.R Osativa_Nipponbare.gtf txdb/Osativa_Nipponbare_txdb.sqlite Osativa_Nipponbare_merged_exons_length.tsv
